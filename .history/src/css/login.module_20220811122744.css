@@ -1,0 +1,84 @@
+@value normalBlue from '../common/colors.css';
+@value lightGrey from '../common/colors.css';
+@value fontSmall, marginNormal, fontMedium, fontLarge, marginHigh, paddingLow, marginLow from '../common/size.css';
+
+.title {
+  text-align: center;
+
+  padding-top: 100px;
+  font-size: 50px;
+  color: normalBlue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  border: 2px solid lightGrey;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: marginNormal;
+}
+
+.inputId,
+.inputPassword {
+  width: 90%;
+  height: 45px;
+  margin: marginNormal marginHigh;
+  padding: paddingLow;
+  box-sizing: border-box;
+  border: 1px solid lightGrey;
+  border-radius: 5px;
+  font-size: fontMedium;
+  outline: 0;
+}
+
+.inputId:focus,
+.inputPassword:focus {
+  border: 2px solid normalBlue;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: marginHigh;
+  margin-top: calc(2 * marginHigh);
+}
+
+.login button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: marginLow;
+  height: 45px;
+}
+
+.login span {
+  font-size: fontSmall;
+}
+.email {
+  width: 100%;
+  padding: paddingLow;
+  background-color: normalBlue;
+  border-radius: 5px;
+  color: white;
+  font-size: fontMedium;
+  font-weight: 600;
+}
+
+.google {
+  width: 50px;
+  height: 50px;
+  margin-top: marginLow;
+  cursor: pointer;
+}
+
+@keyframes identifier {
+}

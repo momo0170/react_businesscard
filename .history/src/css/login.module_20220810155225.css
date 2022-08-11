@@ -1,0 +1,5 @@
+@value normalBlue from '../common/colors.css';
+
+.container {
+  border: 1px solid;
+}

@@ -1,0 +1,8 @@
+@value normalBlue from '../common/colors.css';
+@value lightGrey from '../common/colors.css';
+
+.container {
+  display: flex;
+  width: 70vw;
+  border: 1px solid lightGrey;
+}
