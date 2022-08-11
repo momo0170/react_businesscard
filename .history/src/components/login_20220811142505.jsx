@@ -11,8 +11,8 @@ function Login({
   setEmailUserData,
   setLoginEmail,
   setLoginPassword,
-  loginInputPassword,
-  loginInputId,
+  loginPassword,
+  loginId,
 }) {
   return (
     <>
@@ -20,7 +20,7 @@ function Login({
       <div className={styles.container}>
         <form onSubmit={emailLogin} className={styles.form}>
           <input
-            ref={loginInputId}
+            ref={loginId}
             placeholder="이메일"
             className={styles.inputId}
             onChange={(e) => {
@@ -28,7 +28,7 @@ function Login({
             }}
           />
           <input
-            ref={loginInputPassword}
+            ref={loginPassword}
             type="password"
             placeholder="비밀번호"
             className={styles.inputPassword}

@@ -80,7 +80,6 @@ function App() {
       .then((data) => {
         setGoogleUserData(data.user); // user data 설정
         console.log(data); // console로 들어온 데이터 표시
-        document.location.href = '/main';
       })
       .catch((err) => {
         console.log(err);

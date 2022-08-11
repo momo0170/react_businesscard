@@ -1,4 +1,5 @@
-@value fontNormalGrey, lightGrey,normalBlue from '../common/colors.css';
+@value normalBlue from '../common/colors.css';
+@value fontNormalGrey, lightGrey from '../common/colors.css';
 @value fontSmall, marginNormal, fontMedium, fontLarge, marginHigh, paddingLow, marginLow from '../common/size.css';
 
 .title {

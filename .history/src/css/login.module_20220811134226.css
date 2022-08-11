@@ -1,4 +1,5 @@
-@value fontNormalGrey, lightGrey,normalBlue from '../common/colors.css';
+@value normalBlue from '../common/colors.css';
+@value lightGrey from '../common/colors.css';
 @value fontSmall, marginNormal, fontMedium, fontLarge, marginHigh, paddingLow, marginLow from '../common/size.css';
 
 .title {
@@ -48,7 +49,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: marginMedium;
+  margin: marginHigh;
 }
 
 .google,
@@ -62,7 +63,6 @@
 
 .login span {
   font-size: fontSmall;
-  color: fontNormalGrey;
 }
 .email {
   width: 100%;

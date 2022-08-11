@@ -11,16 +11,13 @@ function Login({
   setEmailUserData,
   setLoginEmail,
   setLoginPassword,
-  loginInputPassword,
-  loginInputId,
 }) {
   return (
     <>
       <h1 className={styles.title}>Business Card</h1>
       <div className={styles.container}>
-        <form onSubmit={emailLogin} className={styles.form}>
+        <form className={styles.form}>
           <input
-            ref={loginInputId}
             placeholder="이메일"
             className={styles.inputId}
             onChange={(e) => {
@@ -28,7 +25,6 @@ function Login({
             }}
           />
           <input
-            ref={loginInputPassword}
             type="password"
             placeholder="비밀번호"
             className={styles.inputPassword}
@@ -36,13 +32,20 @@ function Login({
               setLoginPassword(e.target.value);
             }}
           />
-          {/* 이메일 로그인 */}
-          <button className={styles.email} onClick={emailLogin}>
+          <button
+            className={styles.email}
+            onClick={emailLogin}
+            onKeyPress={() => {
+              console.log('enter');
+            }}
+          >
             {' '}
             <div>로그인</div>
           </button>
         </form>
         <div className={styles.login}>
+          {/* 이메일 로그인 */}
+
           <span>또는</span>
           {/* 구글 로그인 */}
           <img

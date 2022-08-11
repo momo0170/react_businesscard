@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { auth, app } from './firebase';
 import {
   GoogleAuthProvider,
@@ -41,9 +41,6 @@ function App() {
         var registerUser = userCredential.user;
         console.log(registerUser);
       })
-      .then(() => {
-        <Link to="/main"></Link>;
-      })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -63,7 +60,6 @@ function App() {
         const data = userCredential.user;
         setEmailUserData(data);
         console.log(data);
-        document.location.href = '/main';
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -80,7 +76,6 @@ function App() {
       .then((data) => {
         setGoogleUserData(data.user); // user data 설정
         console.log(data); // console로 들어온 데이터 표시
-        document.location.href = '/main';
       })
       .catch((err) => {
         console.log(err);

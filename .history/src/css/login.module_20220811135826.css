@@ -1,3 +1,4 @@
+@value from '../common/colors.css';
 @value fontNormalGrey, lightGrey,normalBlue from '../common/colors.css';
 @value fontSmall, marginNormal, fontMedium, fontLarge, marginHigh, paddingLow, marginLow from '../common/size.css';
 

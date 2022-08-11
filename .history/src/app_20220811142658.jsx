@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { auth, app } from './firebase';
 import {
   GoogleAuthProvider,
@@ -26,12 +26,12 @@ import Main from './components/main';
 function App() {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
-  const [loginEmail, setLoginEmail] = useState(''); // email 저장하는 변수
-  const [loginPassword, setLoginPassword] = useState(''); // 비밀번호 저장하는 변수
-  const [googleUserData, setGoogleUserData] = useState(null); // google 로그인 사용자 정보
-  const [emailUserData, setEmailUserData] = useState(null); // email 로그인 사용자 정보
-  const loginInputId = useRef(); // id input 태그 제어
-  const loginInputPassword = useRef(); // password input 태그 제어
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [googleUserData, setGoogleUserData] = useState(null);
+  const [emailUserData, setEmailUserData] = useState(null);
+  const loginInputId = useRef();
+  const loginInputPassword = useRef();
 
   // 회원가입
   const register = () => {
@@ -40,9 +40,6 @@ function App() {
         // Signed in
         var registerUser = userCredential.user;
         console.log(registerUser);
-      })
-      .then(() => {
-        <Link to="/main"></Link>;
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -63,7 +60,6 @@ function App() {
         const data = userCredential.user;
         setEmailUserData(data);
         console.log(data);
-        document.location.href = '/main';
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -80,7 +76,6 @@ function App() {
       .then((data) => {
         setGoogleUserData(data.user); // user data 설정
         console.log(data); // console로 들어온 데이터 표시
-        document.location.href = '/main';
       })
       .catch((err) => {
         console.log(err);
