@@ -1,0 +1,13 @@
+.nameAndJob {
+  display: flex;
+}
+
+.btns {
+  display: flex;
+}
+.photoBtn,
+.addBtn {
+  outline: 0;
+  border: 0;
+  flex: 1 1 50%;
+}

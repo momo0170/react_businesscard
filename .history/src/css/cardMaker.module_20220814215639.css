@@ -1,0 +1,61 @@
+@value normalBlue, cardBackground, cardBorder, cardAdd, cardDelete, photoAdd from '../common/colors.css';
+@value marginNormal, fontXLarge, marginHigh, paddingLow, fontLarge, paddingNormal, paddingHigh, fontXXLarge from '../common/size.css';
+
+.frame {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: cardBackground;
+  border: 1px solid cardBorder;
+  border-radius: 6px;
+}
+
+input {
+  margin: 0 marginHigh;
+  margin-top: marginNormal;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  padding-left: paddingLow;
+}
+
+.message {
+  margin: marginHigh;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  height: 100px;
+  resize: none;
+  padding: paddingLow;
+}
+
+.name,
+.job,
+.email {
+  height: 30px;
+}
+.name {
+}
+.job {
+}
+
+.btns {
+  display: flex;
+  margin: 0 marginNormal;
+  border-radius: 6px;
+}
+.photoBtn,
+.addBtn {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  flex: 1 1 50%;
+  color: white;
+  padding: paddingNormal 0;
+}
+
+.photoBtn {
+  background-color: normalBlue;
+}
+.addBtn {
+  background-color: cardAdd;
+}

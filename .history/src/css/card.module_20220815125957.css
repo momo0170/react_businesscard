@@ -1,0 +1,6 @@
+@value normalBlue, cardBackground, cardBorder, cardAdd, cardDelete, photoAdd from '../common/colors.css';
+@value marginNormal, fontXLarge, marginLow, marginHigh, paddingLow, fontLarge, paddingNormal, paddingHigh, fontXXLarge from '../common/size.css';
+
+.frame {
+  background-color: grey;
+}

@@ -1,0 +1,46 @@
+@value normalBlue from '../common/colors.css';
+@value marginNormal, marginHigh, paddingLow, fontLarge, fontXXLarge from '../common/size.css';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: marginNormal marginHigh;
+  position: sticky;
+  top: 0;
+  /* background-color: white; */
+}
+
+.title {
+  color: normalBlue;
+  margin: 0;
+  font-size: fontXXLarge;
+  font-weight: 600;
+}
+
+.logout {
+  cursor: pointer;
+  background-color: normalBlue;
+  padding: paddingLow;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.cardMaker {
+  background-color: grey;
+  flex: 1 1 50%;
+}
+.cardMaker span {
+  font-size: fontLarge;
+}
+
+.cardList {
+  background-color: lightblue;
+  flex: 1 1 50%;
+}

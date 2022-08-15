@@ -1,0 +1,30 @@
+.frame {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.nameAndJob {
+  display: flex;
+}
+
+.name {
+  flex: 1 1 20%;
+}
+.job {
+  flex: 1 1 80%;
+}
+
+.emailAndMessage {
+  display: flex;
+  flex-direction: column;
+}
+.btns {
+  display: flex;
+}
+.photoBtn,
+.addBtn {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  flex: 1 1 50%;
+}

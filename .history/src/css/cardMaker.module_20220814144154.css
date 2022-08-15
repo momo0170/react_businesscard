@@ -1,0 +1,37 @@
+@value normalBlue from '../common/colors.css';
+@value marginNormal, fontXLarge, marginHigh, paddingLow, fontLarge, paddingNormal, paddingHigh, fontXXLarge from '../common/size.css';
+
+.frame {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: marginNormal;
+}
+.name,
+.job,
+.email {
+}
+
+.name {
+  margin-bottom: marginNormal;
+}
+.job {
+}
+
+.emailAndMessage {
+  display: flex;
+  flex-direction: column;
+}
+.btns {
+  display: flex;
+}
+.photoBtn,
+.addBtn {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  flex: 1 1 50%;
+}
