@@ -111,7 +111,6 @@ function App() {
     navigate('/login');
     setIsLogin(false);
   }, []);
-
   console.log(isLogin);
   return (
     <Routes>

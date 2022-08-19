@@ -70,7 +70,6 @@ function App() {
         const data = userCredential.user;
         setEmailUserData(data);
         console.log(data);
-        confirmAccount();
         navigate('/main');
       })
       .catch((error) => {
@@ -88,7 +87,6 @@ function App() {
       .then((data) => {
         setGoogleUserData(data.user); // user data 설정
         console.log(data); // console로 들어온 데이터 표시
-        confirmAccount();
         navigate('/main');
       })
       .catch((err) => {
@@ -96,8 +94,7 @@ function App() {
       });
   };
 
-  //  로그인 확인
-  const confirmAccount = () => {
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       console.log(user);
       if (user) {
@@ -106,12 +103,7 @@ function App() {
         setIsLogin(false);
       }
     });
-  };
-  useEffect(() => {
-    navigate('/login');
-    setIsLogin(false);
   }, []);
-
   console.log(isLogin);
   return (
     <Routes>

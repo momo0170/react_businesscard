@@ -109,9 +109,7 @@ function App() {
   };
   useEffect(() => {
     navigate('/login');
-    setIsLogin(false);
   }, []);
-
   console.log(isLogin);
   return (
     <Routes>

@@ -78,6 +78,3 @@ input::placeholder,
 .photoBtn:hover {
   background-color: photoAddHover;
 }
-.addBtn:hover {
-  background-color: darkBlue;
-}

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 import Login from './route/login';
 import Main from './route/main';
@@ -70,7 +71,6 @@ function App() {
         const data = userCredential.user;
         setEmailUserData(data);
         console.log(data);
-        confirmAccount();
         navigate('/main');
       })
       .catch((error) => {
@@ -88,7 +88,6 @@ function App() {
       .then((data) => {
         setGoogleUserData(data.user); // user data 설정
         console.log(data); // console로 들어온 데이터 표시
-        confirmAccount();
         navigate('/main');
       })
       .catch((err) => {
@@ -96,23 +95,15 @@ function App() {
       });
   };
 
-  //  로그인 확인
-  const confirmAccount = () => {
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
       if (user) {
         setIsLogin(true);
       } else {
         setIsLogin(false);
       }
     });
-  };
-  useEffect(() => {
-    navigate('/login');
-    setIsLogin(false);
-  }, []);
-
-  console.log(isLogin);
+  });
   return (
     <Routes>
       <Route path="/">
@@ -137,7 +128,7 @@ function App() {
       </Route>
       <Route
         path="/main"
-        element={isLogin ? <Main /> : <Navigate to="/login" />}
+        render={() => (isLogin ? <Login /> : <Redirect to="/" />)}
       />
     </Routes>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Login from './route/login';
 import Main from './route/main';
@@ -28,7 +28,6 @@ import {
 // onAuthStateChanged : 사용자의 로그인 상태 변경 감시
 
 function App() {
-  const navigate = useNavigate();
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
 
@@ -42,7 +41,6 @@ function App() {
   const loginInputPassword = useRef(); // password input 태그 제어
 
   const [isLogin, setIsLogin] = useState(false);
-  const [init, setInit] = useState(false);
 
   // 회원가입
   const register = () => {
@@ -70,8 +68,7 @@ function App() {
         const data = userCredential.user;
         setEmailUserData(data);
         console.log(data);
-        confirmAccount();
-        navigate('/main');
+        document.location.href = '/main';
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -88,31 +85,22 @@ function App() {
       .then((data) => {
         setGoogleUserData(data.user); // user data 설정
         console.log(data); // console로 들어온 데이터 표시
-        confirmAccount();
-        navigate('/main');
+        document.location.href = '/main';
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  //  로그인 확인
-  const confirmAccount = () => {
+  useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
       if (user) {
         setIsLogin(true);
       } else {
         setIsLogin(false);
       }
     });
-  };
-  useEffect(() => {
-    navigate('/login');
-    setIsLogin(false);
-  }, []);
-
-  console.log(isLogin);
+  });
   return (
     <Routes>
       <Route path="/">
@@ -135,10 +123,7 @@ function App() {
           }
         />
       </Route>
-      <Route
-        path="/main"
-        element={isLogin ? <Main /> : <Navigate to="/login" />}
-      />
+      <Route path="/main" element={<Main />} />
     </Routes>
   );
 }

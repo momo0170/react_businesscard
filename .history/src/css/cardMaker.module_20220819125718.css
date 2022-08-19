@@ -1,4 +1,4 @@
-@value darkBlue, normalBlue, photoAddHover, cardBackground, cardBorder, cardAdd, cardDelete, photoAdd from '../common/colors.css';
+@value normalBlue, photoAddHover, cardBackground, cardBorder, cardAdd, cardDelete, photoAdd from '../common/colors.css';
 @value marginNormal, fontXLarge, marginLow, marginHigh, paddingLow, fontLarge, paddingNormal, paddingHigh, fontXXLarge from '../common/size.css';
 
 .frame {
@@ -73,11 +73,4 @@ input::placeholder,
 }
 .addBtn {
   background-color: normalBlue;
-}
-
-.photoBtn:hover {
-  background-color: photoAddHover;
-}
-.addBtn:hover {
-  background-color: darkBlue;
 }
