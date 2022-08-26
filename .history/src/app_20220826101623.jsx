@@ -7,7 +7,7 @@ import Home from './route/home';
 function App({ authService }) {
   return (
     <Routes>
-      <Route path="/" element={<Home authService={authService} />}>
+      <Route path="/" element={<Home />}>
         <Route path="login" element={<Login authService={authService} />} />
       </Route>
       <Route path="/main" element={<Main />} />

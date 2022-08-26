@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useNavigate } from 'react';
 import styles from '../css/login.module.css';
 
 function Login({ authService }) {

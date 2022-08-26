@@ -1,11 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from '../css/login.module.css';
 
-function Login({ authService }) {
+function Login({}) {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
-  const navigate = useNavigate();
+
   const [emailAccount, setEmailAccount] = useState({
     id: '',
     password: '',
@@ -16,12 +15,10 @@ function Login({ authService }) {
   const loginInputId = useRef(); // id input 태그 제어
   const loginInputPassword = useRef(); // password input 태그 제어
 
-  const loginEmail = (e) => {
+  const emailLogin = (e) => {
     e.preventDefault();
     loginInputId.current.value = '';
     loginInputPassword.current.value = '';
-    authService.loginWithEmail(emailAccount.id, emailAccount.password);
-    navigate('/main');
   };
 
   const changeIdAndPassword = (e) => {
@@ -32,15 +29,11 @@ function Login({ authService }) {
     });
   };
 
-  const loginGoogle = () => {
-    console.log('google');
-  };
-
   return (
     <>
       <h1 className={styles.title}>Business Card</h1>
       <div className={styles.container}>
-        <form onSubmit={loginEmail} className={styles.form}>
+        <form onSubmit={emailLogin} className={styles.form}>
           <input
             name="id"
             ref={loginInputId}
@@ -59,7 +52,8 @@ function Login({ authService }) {
             onChange={changeIdAndPassword}
           />
           {/* 이메일 로그인 */}
-          <button className={styles.email} onClick={loginEmail}>
+          <button className={styles.email} onClick={emailLogin}>
+            {' '}
             <div>로그인</div>
           </button>
         </form>

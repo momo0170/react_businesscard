@@ -1,11 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from '../css/login.module.css';
 
 function Login({ authService }) {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
-  const navigate = useNavigate();
+
   const [emailAccount, setEmailAccount] = useState({
     id: '',
     password: '',

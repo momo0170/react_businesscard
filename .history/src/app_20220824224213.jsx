@@ -2,13 +2,14 @@ import { Routes, Route } from 'react-router-dom';
 
 import Login from './route/login';
 import Main from './route/main';
-import Home from './route/home';
 
-function App({ authService }) {
+import { auth } from './service/firebase';
+
+function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home authService={authService} />}>
-        <Route path="login" element={<Login authService={authService} />} />
+      <Route path="/">
+        <Route path="login" element={<Login />} />
       </Route>
       <Route path="/main" element={<Main />} />
     </Routes>

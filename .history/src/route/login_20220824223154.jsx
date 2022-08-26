@@ -1,11 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from '../css/login.module.css';
 
-function Login({ authService }) {
+function Login({}) {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
-  const navigate = useNavigate();
+
   const [emailAccount, setEmailAccount] = useState({
     id: '',
     password: '',
@@ -20,8 +19,6 @@ function Login({ authService }) {
     e.preventDefault();
     loginInputId.current.value = '';
     loginInputPassword.current.value = '';
-    authService.loginWithEmail(emailAccount.id, emailAccount.password);
-    navigate('/main');
   };
 
   const changeIdAndPassword = (e) => {
@@ -35,7 +32,6 @@ function Login({ authService }) {
   const loginGoogle = () => {
     console.log('google');
   };
-
   return (
     <>
       <h1 className={styles.title}>Business Card</h1>
