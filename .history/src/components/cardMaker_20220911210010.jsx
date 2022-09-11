@@ -3,6 +3,7 @@ import styles from '../css/cardMaker.module.css';
 
 function CardMaker({ card }) {
   const { name, job, email, message } = card;
+  const [onClick, setOnClick] = useState(true);
   const onDeleteCard = (e) => {
     e.preventDefault();
     // ... 카드를 삭제
@@ -40,8 +41,11 @@ function CardMaker({ card }) {
         <button className={styles.photoBtn} onClick={onImgAdd}>
           사진 추가
         </button>
-        <button className={styles.deleteBtn} onClick={onDeleteCard}>
-          삭제
+        <button
+          className={onClick ? styles.deleteBtn : styles.addBtn}
+          onClick={onDeleteCard}
+        >
+          {onClick ? '삭제' : '추가'}
         </button>
       </div>
     </form>

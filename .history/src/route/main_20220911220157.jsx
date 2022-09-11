@@ -12,11 +12,6 @@ function Main({ authService }) {
     authService.logout();
   };
 
-  const addCard = (card) => {
-    const updated = [...cards, card];
-    setCards(updated);
-  };
-
   // 현재 로그인한 사용자가 있는지 없는지 확인, 없다면 home
   useEffect(() => {
     authService.confirmUser((user) => {

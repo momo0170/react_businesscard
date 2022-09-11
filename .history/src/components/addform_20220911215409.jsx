@@ -1,51 +1,53 @@
-import { useState } from 'react';
-import styles from '../css/cardMaker.module.css';
+import styles from '../css/addForm.module.css';
 
-function CardMaker({ card }) {
-  const { name, job, email, message } = card;
-  const onDeleteCard = (e) => {
+function AddForm({ setCards }) {
+  const onAddCard = (e) => {
     e.preventDefault();
-    // ... 카드를 삭제
+    setCards({ ...cards });
+    // 카드를 추가
   };
   const onImgAdd = (e) => {
     e.preventDefault();
   };
+  name;
+  job;
+  email;
+  message;
   return (
     <form className={styles.frame}>
       <input
+        ref={nameRef}
         className={styles.name}
         placeholder="이름"
         name="name"
-        defaultValue={name}
       />
       <input
+        ref={jobRef}
         className={styles.job}
         placeholder="직업"
         name="job"
-        defaultValue={job}
       />
       <input
+        ref={emailRef}
         className={styles.email}
         placeholder="이메일"
         name="email"
-        defaultValue={email}
       />
       <textarea
+        ref={messageRef}
         className={styles.message}
         placeholder="메세지"
         name="message"
-        defaultValue={message}
       />
       <div className={styles.btns}>
         <button className={styles.photoBtn} onClick={onImgAdd}>
           사진 추가
         </button>
-        <button className={styles.deleteBtn} onClick={onDeleteCard}>
-          삭제
+        <button className={styles.addBtn} onClick={onAddCard}>
+          추가
         </button>
       </div>
     </form>
   );
 }
-
-export default CardMaker;
+export default AddForm;

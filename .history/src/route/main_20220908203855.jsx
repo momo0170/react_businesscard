@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AddForm from '../components/addForm';
 import Card from '../components/card';
 import CardMaker from '../components/cardMaker';
 import styles from '../css/main.module.css';
@@ -10,11 +9,6 @@ function Main({ authService }) {
   const navigate = useNavigate();
   const Logout = () => {
     authService.logout();
-  };
-
-  const addCard = (card) => {
-    const updated = [...cards, card];
-    setCards(updated);
   };
 
   // 현재 로그인한 사용자가 있는지 없는지 확인, 없다면 home
@@ -33,7 +27,7 @@ function Main({ authService }) {
       theme: 'light',
       job: '프론트엔드 개발자',
       email: 'momo017097@gmail.com',
-      message: 'This is message',
+      message: 'This is maessage',
       fileName: 'changhan',
       fileURL: 'changhan.png',
     },
@@ -73,10 +67,9 @@ function Main({ authService }) {
         <div className={styles.cardMakerTitle}>
           <span>Card Maker</span>
           <div className={styles.cardMakers}>
-            {cards.map((card) => (
-              <CardMaker card={card} key={card.id} />
-            ))}
-            <AddForm addCard={addCard} />
+            {cards.map((card) => {
+              <CardMaker cards={cards} />;
+            })}
           </div>
         </div>
 

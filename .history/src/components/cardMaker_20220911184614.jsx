@@ -3,9 +3,11 @@ import styles from '../css/cardMaker.module.css';
 
 function CardMaker({ card }) {
   const { name, job, email, message } = card;
-  const onDeleteCard = (e) => {
+  const [onClick, setOnClick] = useState(false);
+  const onBtnClick = (e) => {
     e.preventDefault();
-    // ... 카드를 삭제
+    setOnClick(!onClick);
+    // 카드를 추가
   };
   const onImgAdd = (e) => {
     e.preventDefault();
@@ -16,32 +18,30 @@ function CardMaker({ card }) {
         className={styles.name}
         placeholder="이름"
         name="name"
-        defaultValue={name}
+        value={name}
       />
-      <input
-        className={styles.job}
-        placeholder="직업"
-        name="job"
-        defaultValue={job}
-      />
+      <input className={styles.job} placeholder="직업" name="job" value={job} />
       <input
         className={styles.email}
         placeholder="이메일"
         name="email"
-        defaultValue={email}
+        value={email}
       />
       <textarea
         className={styles.message}
         placeholder="메세지"
         name="message"
-        defaultValue={message}
+        value={message}
       />
       <div className={styles.btns}>
         <button className={styles.photoBtn} onClick={onImgAdd}>
           사진 추가
         </button>
-        <button className={styles.deleteBtn} onClick={onDeleteCard}>
-          삭제
+        <button
+          className={onClick ? styles.deleteBtn : styles.addBtn}
+          onClick={onBtnClick}
+        >
+          {onClick ? '삭제' : '추가'}
         </button>
       </div>
     </form>

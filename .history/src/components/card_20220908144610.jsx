@@ -16,7 +16,12 @@ function Card({ card }) {
         </div>
         <div className={styles.email}>{email}</div>
       </div>
-      <div className={styles.message}>{message}</div>
+      <div className={styles.message}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+        delectus architecto nulla cupiditate! Quidem laborum voluptate fuga
+        ducimus veniam impedit. Molestias tenetur voluptatibus error sequi saepe
+        cum explicabo iste mollitia!
+      </div>
     </div>
   );
 }

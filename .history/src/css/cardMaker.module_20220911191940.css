@@ -13,10 +13,10 @@
 input {
   margin: 0 marginHigh;
   margin-top: marginNormal;
-  border: 2px solid white;
   border-radius: 6px;
   padding-left: paddingLow;
   outline: 0;
+  border: 0;
 }
 
 .message {

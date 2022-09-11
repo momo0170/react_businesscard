@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: cardBackground;
   border: 1px solid cardBorder;
   border-radius: 6px;
 }
@@ -13,7 +14,7 @@
 input {
   margin: 0 marginHigh;
   margin-top: marginNormal;
-  border: 2px solid white;
+  border: 2px solid #eeeeee;
   border-radius: 6px;
   padding-left: paddingLow;
   outline: 0;
@@ -22,7 +23,7 @@ input {
 .message {
   margin: marginHigh;
   margin-bottom: 0;
-  border: 2px solid white;
+  border: 2px solid #eeeeee;
   border-radius: 6px;
   height: 100px;
   resize: none;
@@ -84,7 +85,7 @@ input::placeholder,
   background-color: normalBlue;
 }
 .deleteBtn {
-  background-color: cardDelete;
+  background-color: ff0000;
 }
 
 .photoBtn:hover {

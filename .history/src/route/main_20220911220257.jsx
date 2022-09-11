@@ -13,8 +13,7 @@ function Main({ authService }) {
   };
 
   const addCard = (card) => {
-    const updated = [...cards, card];
-    setCards(updated);
+    console.log(card);
   };
 
   // 현재 로그인한 사용자가 있는지 없는지 확인, 없다면 home

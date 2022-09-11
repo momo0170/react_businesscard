@@ -1,7 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AddForm from '../components/addForm';
 import Card from '../components/card';
 import CardMaker from '../components/cardMaker';
 import styles from '../css/main.module.css';
@@ -10,11 +9,6 @@ function Main({ authService }) {
   const navigate = useNavigate();
   const Logout = () => {
     authService.logout();
-  };
-
-  const addCard = (card) => {
-    const updated = [...cards, card];
-    setCards(updated);
   };
 
   // 현재 로그인한 사용자가 있는지 없는지 확인, 없다면 home
@@ -31,9 +25,9 @@ function Main({ authService }) {
       id: '1',
       name: '이창한',
       theme: 'light',
-      job: '프론트엔드 개발자',
+      title: '프론트엔드 개발자',
       email: 'momo017097@gmail.com',
-      message: 'This is message',
+      message: 'This is maessage',
       fileName: 'changhan',
       fileURL: 'changhan.png',
     },
@@ -41,21 +35,21 @@ function Main({ authService }) {
       id: '2',
       name: '홍길동',
       theme: 'light',
-      job: '웹 디자이너',
+      title: '웹 디자이너',
       email: 'gildong@gmail.com',
       message: 'This is gildong message',
       fileName: 'gildong',
-      fileURL: null,
+      fileURL: 'gildong.png',
     },
     {
       id: '3',
       name: '김민재',
       theme: 'light',
-      job: '축구선수',
+      title: '축구선수',
       email: 'minjae@gmail.com',
       message: '나폴리 수비수',
       fileName: 'minjae',
-      fileURL: null,
+      fileURL: 'minjae.png',
     },
   ]);
   return (
@@ -73,10 +67,7 @@ function Main({ authService }) {
         <div className={styles.cardMakerTitle}>
           <span>Card Maker</span>
           <div className={styles.cardMakers}>
-            {cards.map((card) => (
-              <CardMaker card={card} key={card.id} />
-            ))}
-            <AddForm addCard={addCard} />
+            <CardMaker cards={cards} />
           </div>
         </div>
 
@@ -84,9 +75,12 @@ function Main({ authService }) {
         <div className={styles.cardListTitle}>
           <span>Card List</span>
           <div className={styles.cardLists}>
-            {cards.map((card) => (
-              <Card card={card} key={card.id} />
-            ))}
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
       </div>

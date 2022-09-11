@@ -40,8 +40,11 @@ function CardMaker({ card }) {
         <button className={styles.photoBtn} onClick={onImgAdd}>
           사진 추가
         </button>
-        <button className={styles.deleteBtn} onClick={onDeleteCard}>
-          삭제
+        <button
+          className={onClick ? styles.deleteBtn : styles.addBtn}
+          onClick={onDeleteCard}
+        >
+          {onClick ? '삭제' : '추가'}
         </button>
       </div>
     </form>
