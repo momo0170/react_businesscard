@@ -1,0 +1,18 @@
+@value normalBlue from '../common/colors.css';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 10px;
+}
+
+.title {
+  color: normalBlue;
+  margin: 0;
+}
+
+.logout {
+  cursor: pointer;
+  background-color: normalBlue;
+  padding: 10px 10px;
+}

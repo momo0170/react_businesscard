@@ -1,0 +1,21 @@
+@value paddingLow: 10px;
+@value paddingNormal: 14px;
+@value paddingHigh: 24px;
+
+@value marginLow: 10px;
+@value marginNormal: 14px;
+@value marginHigh: 24px;
+
+@value fontSmall: 12px;
+@value fontMedium: 16px;
+@value fontLarge: 20px;
+@value fontXLarge: 34px;
+@value fontXXLarge: 42px;
+
+@value borderSmall: 1px;
+@value borderMedium: 2px;
+@value borderLarge: 3px;
+
+@value boldSmall: 600;
+@value boldMedieum: 700;
+@value boldLarge: 800;

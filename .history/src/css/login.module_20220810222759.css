@@ -1,0 +1,46 @@
+@value normalBlue from '../common/colors.css';
+@value lightGrey from '../common/colors.css';
+@value fontSmall, marginNormal, marginHigh, paddingLow from '../common/size.css';
+
+.title {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 50px;
+  color: normalBlue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  border: 2px solid lightGrey;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputId,
+.inputPassword {
+  height: 40px;
+  margin: marginNormal marginHigh;
+  /* padding: paddingLow; */
+  box-sizing: border-box;
+  border: 1px solid lightGrey;
+  border-radius: 5px;
+  font-size: fontSmall;
+  outline: 0;
+}
+
+inputId:focus,
+.inputPassword:focus {
+  border: 2px solid normalBlue;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}

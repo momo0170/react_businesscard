@@ -1,0 +1,86 @@
+@value fontNormalGrey, lightGrey,normalBlue from '../common/colors.css';
+@value fontSmall, marginNormal, fontMedium, fontLarge, marginHigh, paddingLow, marginLow from '../common/size.css';
+
+.title {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 50px;
+  color: normalBlue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  border: 2px solid lightGrey;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: marginNormal;
+  margin: marginNormal marginHigh;
+}
+
+.inputId,
+.inputPassword {
+  width: 100%;
+  height: 45px;
+  margin: marginNormal marginHigh;
+  padding: paddingLow;
+  box-sizing: border-box;
+  border: 2px solid lightGrey;
+  border-radius: 6px;
+  font-size: fontMedium;
+  outline: 0;
+}
+
+.inputId:focus,
+.inputPassword:focus {
+  border: 2px solid normalBlue;
+  transition: border 0.3s ease;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: marginMedium;
+}
+
+.google,
+.email {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: marginLow;
+  height: 45px;
+}
+
+.login span {
+  font-size: fontSmall;
+  color: fontNormalGrey;
+}
+.email {
+  width: 100%;
+  padding: paddingLow;
+  margin-top: calc(2 * marginHigh);
+  background-color: normalBlue;
+  border-radius: 5px;
+  color: white;
+  font-size: fontMedium;
+  font-weight: 600;
+}
+
+.google {
+  width: 40px;
+  height: 40px;
+  margin-top: marginLow;
+  cursor: pointer;
+}
+
+@keyframes identifier {
+}

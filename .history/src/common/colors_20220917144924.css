@@ -1,0 +1,15 @@
+@value normalBlue: #4695f0;
+@value darkBlue: #2c88e0;
+@value lightGrey: lightgrey;
+@value fontNormalGrey: rgba(0, 0, 0, 0.7);
+@value divisionLine: #eeeeee;
+
+@value cardBackground: #f5f5f5;
+@value cardBorder: #e0e0e0;
+@value cardDelete: #ff0000;
+@value photoAdd: #bcbcbc;
+@value cardDelete: #ff0000;
+@value cardDeleteHover: #DC0000;
+
+@value photoAddHover: #aeaeae;
+@value cardFontColor: #404040;

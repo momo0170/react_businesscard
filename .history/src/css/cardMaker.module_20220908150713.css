@@ -1,0 +1,96 @@
+@value darkBlue, normalBlue, photoAddHover, cardBackground, cardBorder, cardAdd, cardDelete, photoAdd from '../common/colors.css';
+@value marginNormal, fontXLarge, marginLow, marginHigh, paddingLow, fontLarge, paddingNormal, paddingHigh, fontXXLarge from '../common/size.css';
+
+.frame {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: cardBackground;
+  border: 1px solid cardBorder;
+  border-radius: 6px;
+}
+
+input {
+  margin: 0 marginHigh;
+  margin-top: marginNormal;
+  border: 2px solid #eeeeee;
+  border-radius: 6px;
+  padding-left: paddingLow;
+  outline: 0;
+}
+
+.message {
+  margin: marginHigh;
+  margin-bottom: 0;
+  border: 2px solid #eeeeee;
+  border-radius: 6px;
+  height: 100px;
+  resize: none;
+  padding: paddingLow;
+  outline: 0;
+}
+
+.name,
+.job,
+.email {
+  height: 30px;
+}
+
+.name:focus,
+.job:focus,
+.email:focus,
+.message:focus {
+  border: 2px solid normalBlue;
+  transition: border 0.3s ease;
+}
+
+input::placeholder,
+.message::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin: marginLow marginHigh;
+}
+.photoBtn,
+.addBtn {
+  outline: 0;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1 1 50%;
+  color: white;
+  padding: paddingNormal 0;
+  font-weight: 600;
+}
+.deleteBtn {
+  outline: 0;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1 1 50%;
+  color: white;
+  padding: paddingNormal 0;
+  font-weight: 600;
+}
+
+.photoBtn {
+  background-color: photoAdd;
+  margin-right: marginLow;
+}
+.addBtn {
+  background-color: normalBlue;
+}
+.deleteBtn {
+  background-color: ff0000;
+}
+
+.photoBtn:hover {
+  background-color: photoAddHover;
+}
+.addBtn:hover {
+  background-color: darkBlue;
+}

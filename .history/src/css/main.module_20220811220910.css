@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logout {
+  outline: 0;
+  border: 0;
+  background-color: white;
+  cursor: pointer;
+}
