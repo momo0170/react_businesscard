@@ -18,9 +18,11 @@ function Main({ authService }) {
     const updated = [...cards, card]; // 새로운 카드 추가
     setCards(updated);
   };
-  // 매개변수로 가져온 id와 카드 리스트에 존재하는 카드들의 id 비교 후 조건에 맞는 것을 추출
+  //
   const deleteCard = (selectedCardId) => {
     const modified = cards.filter((card) => {
+      console.log(card.id);
+      console.log(selectedCardId);
       return selectedCardId !== card.id;
     });
     setCards(modified);
@@ -47,7 +49,8 @@ function Main({ authService }) {
       fileURL: 'changhan.png',
     },
   ]);
-
+  console.log(`개수 : ${cards.length}`);
+  console.log(cards);
   return (
     <>
       <header className={styles.header}>

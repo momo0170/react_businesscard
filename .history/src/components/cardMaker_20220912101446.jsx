@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styles from '../css/cardMaker.module.css';
 
-function CardMaker({ card, deleteCard }) {
+function CardMaker({ card }) {
   const { name, job, email, message } = card;
-  // 삭제 버튼을 눌렀을 때 실행
   const onDeleteCard = (e) => {
     e.preventDefault();
-    deleteCard(card.id); // card.id를 매개변수로 전달
+    // ... 카드를 삭제
+    console.log(e.currentTarget);
   };
   const onImgAdd = (e) => {
     e.preventDefault();

@@ -9,21 +9,24 @@ import styles from '../css/main.module.css';
 
 function Main({ authService }) {
   const navigate = useNavigate();
+  const objId = useRef(0); // 오브젝트에 생성된 id
   const Logout = () => {
     authService.logout();
   };
 
   // 새로 생성된 객체를 가지고 state(cards)를 업데이트
   const addCard = (card) => {
-    const updated = [...cards, card]; // 새로운 카드 추가
+    const updated = [...cards, card];
     setCards(updated);
   };
-  // 매개변수로 가져온 id와 카드 리스트에 존재하는 카드들의 id 비교 후 조건에 맞는 것을 추출
-  const deleteCard = (selectedCardId) => {
-    const modified = cards.filter((card) => {
-      return selectedCardId !== card.id;
-    });
-    setCards(modified);
+  const deleteCard = (selectedCard) => {
+    // const modified = cards.filter((selectedCard) => {
+    //   console.log(`선택된 카드 id : ${selectedCard.id}`);
+    //   console.log(`선택된 카드 name : ${selectedCard.name}`);
+    //   return
+    // });
+    // setCards(modified);
+    console.log(selectedCard);
   };
 
   // 현재 로그인한 사용자가 있는지 없는지 확인, 없다면 home
@@ -37,7 +40,7 @@ function Main({ authService }) {
 
   const [cards, setCards] = useState([
     {
-      id: 1,
+      id: '1',
       name: '이창한',
       theme: 'light',
       job: '프론트엔드 개발자',
@@ -46,8 +49,27 @@ function Main({ authService }) {
       fileName: 'changhan',
       fileURL: 'changhan.png',
     },
+    {
+      id: '2',
+      name: '홍길동',
+      theme: 'light',
+      job: '웹 디자이너',
+      email: 'gildong@gmail.com',
+      message: 'This is gildong message',
+      fileName: 'gildong',
+      fileURL: null,
+    },
+    {
+      id: '3',
+      name: '김민재',
+      theme: 'light',
+      job: '축구선수',
+      email: 'minjae@gmail.com',
+      message: '나폴리 수비수',
+      fileName: 'minjae',
+      fileURL: null,
+    },
   ]);
-
   return (
     <>
       <header className={styles.header}>

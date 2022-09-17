@@ -47,7 +47,8 @@ function Main({ authService }) {
       fileURL: 'changhan.png',
     },
   ]);
-
+  console.log(`개수 : ${cards.length}`);
+  console.log(cards);
   return (
     <>
       <header className={styles.header}>

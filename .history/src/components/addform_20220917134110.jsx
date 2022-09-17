@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import styles from '../css/addForm.module.css';
 
-function AddForm({ addCard, cards }) {
+function AddForm({ addCard, cards, cardsLength }) {
   const formRef = useRef();
   const nameRef = useRef();
   const jobRef = useRef();
@@ -11,8 +11,9 @@ function AddForm({ addCard, cards }) {
   // 추가를 눌렀을 때 실행
   const onAddCard = (e) => {
     e.preventDefault();
+    console.log(`현재 개수 : ${cardsLength} `);
     const card = {
-      id: cards.length >= 1 ? cards[cards.length - 1].id + 1 : 0,
+      id: cards[cardsLength - 1].id + 1,
       name: nameRef.current.value || '', // 입력된 값을 card의 값으로 설정
       job: jobRef.current.value || '',
       email: emailRef.current.value || '',
@@ -26,6 +27,7 @@ function AddForm({ addCard, cards }) {
   const onImgAdd = (e) => {
     e.preventDefault();
   };
+
   return (
     <form ref={formRef} className={styles.frame}>
       <input

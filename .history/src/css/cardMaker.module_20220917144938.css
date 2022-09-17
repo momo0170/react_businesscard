@@ -94,5 +94,4 @@ input::placeholder,
   background-color: darkBlue;
 }
 .deleteBtn:hover {
-  background-color: cardDeleteHover;
 }

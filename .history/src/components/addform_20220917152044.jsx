@@ -26,6 +26,7 @@ function AddForm({ addCard, cards }) {
   const onImgAdd = (e) => {
     e.preventDefault();
   };
+
   return (
     <form ref={formRef} className={styles.frame}>
       <input

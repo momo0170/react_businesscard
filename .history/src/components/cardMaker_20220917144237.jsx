@@ -3,9 +3,9 @@ import styles from '../css/cardMaker.module.css';
 
 function CardMaker({ card, deleteCard }) {
   const { name, job, email, message } = card;
-  // 삭제 버튼을 눌렀을 때 실행
   const onDeleteCard = (e) => {
     e.preventDefault();
+    // ... 카드를 삭제
     deleteCard(card.id); // card.id를 매개변수로 전달
   };
   const onImgAdd = (e) => {

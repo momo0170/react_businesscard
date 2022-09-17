@@ -12,7 +12,7 @@ function AddForm({ addCard, cards }) {
   const onAddCard = (e) => {
     e.preventDefault();
     const card = {
-      id: cards.length >= 1 ? cards[cards.length - 1].id + 1 : 0,
+      id: cards.length + 1,
       name: nameRef.current.value || '', // 입력된 값을 card의 값으로 설정
       job: jobRef.current.value || '',
       email: emailRef.current.value || '',
@@ -20,12 +20,13 @@ function AddForm({ addCard, cards }) {
       fileName: '',
       fileURL: '',
     };
-    formRef.current.reset(); // form에 존재하는 현재 값을 비움
-    addCard(card); // 새로 만들어진 객체로 업데이트
+    formRef.current.reset();
+    addCard(card);
   };
   const onImgAdd = (e) => {
     e.preventDefault();
   };
+
   return (
     <form ref={formRef} className={styles.frame}>
       <input
